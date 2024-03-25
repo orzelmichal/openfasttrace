@@ -11,7 +11,8 @@ public class MarkdownImporterFactory extends RegexMatchingImporterFactory
     /** Creates a new instance. */
     public MarkdownImporterFactory()
     {
-        super("(?i).*\\.markdown", "(?i).*\\.md");
+        /* HACK: Detect RST files as if they were MD */
+        super("(?i).*\\.markdown", "(?i).*\\.md", "(?i).*\\.rst");
     }
 
     @Override
